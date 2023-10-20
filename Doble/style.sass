@@ -1,0 +1,78 @@
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+
+/* COMENTARIO */
+// ESTO TAMBIEN ES UN COMENTARIO
+
+// LAS VARIABLES EN SASS (ESPACIO EN MEMORIA)
+
+$colorPrincipal : yellow
+$tamanoPrincipal : 500px
+$fuentePrincipal : 30px
+$fuenteFamilia : 'sanserif'
+
+
+// ANIDAMIENTO (Seleccion de la estructura de los hijos de un elemento)
+main
+    width: $tamanoPrincipal
+    height: $tamanoPrincipal
+    background-color: $colorPrincipal
+    color: white
+    &:hover
+        background-color: red
+    h1
+        font-size: $fuentePrincipal
+    p
+        color: purple
+
+// LOS MIXIN (CON Y SIN PARAMETROS: SON FRAGMENTOS DE CODIGO QUE PUEDEN SER REUTILIZADO)
+
+@mixin my-mixin($color)
+    padding: 10px 15px
+    border: none
+    border-radius: 20px
+    background-color: $color
+
+@mixin flexBox($direccion:row,$justify:center,$align:center)
+    display: flex
+    flex-direction: $direccion
+    justify-content: $justify
+    align-items: $align
+
+.section
+    height: 400px
+    background-color: blue
+    //@include flexBox(column,center,center)
+    @include flexBox(column)
+.aceptar
+    @include my-mixin(green)
+
+.eliminar
+    @include my-mixin(red)
+
+
+//BEM (BLOCK,ELEMENT,MODIFIER)
+
+.header
+    background-color: gray
+    &__titulo
+        font-size: 26px
+        color: white
+    &__boton
+        padding: 10px 20px
+        color: white
+        border: none
+        &--red
+            background-color: red
+        &--green
+            background-color: green
+
+
+// @extend ----> nos permite reutilizar estilos de otros selectores
+
+.boton-secundario
+    background-color: yellow
+    @extend .header__boton

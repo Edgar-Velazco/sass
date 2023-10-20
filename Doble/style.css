@@ -1,0 +1,70 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* COMENTARIO */
+main {
+  width: 500px;
+  height: 500px;
+  background-color: yellow;
+  color: white;
+}
+main:hover {
+  background-color: red;
+}
+main h1 {
+  font-size: 30px;
+}
+main p {
+  color: purple;
+}
+
+.section {
+  height: 400px;
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.aceptar {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  background-color: green;
+}
+
+.eliminar {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  background-color: red;
+}
+
+.header {
+  background-color: gray;
+}
+.header__titulo {
+  font-size: 26px;
+  color: white;
+}
+.header__boton, .boton-secundario {
+  padding: 10px 20px;
+  color: white;
+  border: none;
+}
+.header__boton--red {
+  background-color: red;
+}
+.header__boton--green {
+  background-color: green;
+}
+
+.boton-secundario {
+  background-color: yellow;
+}
+
+/*# sourceMappingURL=style.css.map */

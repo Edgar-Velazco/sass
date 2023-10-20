@@ -1,0 +1,104 @@
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+/* comentario */
+// esto tambien es un comentario
+
+// LAS VARIABLES EN SASS (ESPACIO EN MEMORIA)
+
+
+$colorPrincipal : yellow
+$tamanoPrincipal : 500px
+
+// ANIDAMIENTO(Seleccion de la estructura de los hijos de un elemento)
+main
+    width: $tamanoPrincipal
+    height: $tamanoPrincipal
+    background-color: $colorPrincipal
+    color: white
+    &:hover
+        background-color: purple
+    h1
+        font-size: 30px    
+    p
+        color: purple 
+
+
+
+// LOS MIXIN (con y sin parametros: son fragmentos de codigo que pueden ser reutilizado)
+
+@mixin my-mixin($color)
+    padding: 10px 15px
+    border: none
+    border-radius: 20px
+    background-color: $color
+
+//button
+    @include my-mixin(green)
+
+.aceptar
+    @include my-mixin(green)
+
+.eliminar
+    @include my-mixin(red)
+    
+@mixin flexBox($direccion, $justify, $aling)
+    display: flex
+    flex-direction: $direccion
+    justify-content: $justify
+    align-items: $aling
+
+.section
+    height: 400px
+    background-color: blue
+    @include flexBox(colum, center, center)
+
+// BEN (BLOCK, ELEMENT, MODIFIER)
+
+.header
+    background-color: grey
+    &_titulo
+        font-size: 26px
+        color: white
+    &_boton
+        padding: 10px 20px
+        color: whiite
+        border: none
+        &:--red
+            background-color: red
+        &--green
+            background-color: green
+
+// @extender ----> nos permite reutilizar estilos de otro selector
+
+.boton-secundario
+    background-color: yellow
+    @extend .header__boton
+
+// CONDICIONALES   @if (si se culple la condicion) @else (si en el if no se cumple la condicion)
+// @else if (otra condicion)
+
+// OPERADORES: 
+// == (igualdad) por ejem: 1 == 1
+// != (desigualdad) por emp: 2 != 3
+// > (operador de mayor) ej: 3 > 5
+// < (operador de menor) ej: 5 < 6
+// >= (mayor o igual) ej: 18 >= 18
+// <= (menor o igual) ej: 10 <= 10
+
+$condicion : 5
+
+h4
+    @if 5 > 6
+        background-color: green
+    @else 
+        background-color: red
+
+    
+
+            
+        
+        
+        
